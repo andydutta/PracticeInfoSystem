@@ -1,0 +1,28 @@
+<h1>Doctor {{ doctorDetails.name }}</h1>
+
+<p>Here are the details of the doctor.</p>
+
+<p *ngIf="!doctorDetails"><em>Loading...</em></p>
+
+<table class='table' *ngIf="doctorDetails">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Medical School Attended</th>
+    <th>Language Spoken</th>
+    <th>Patient Reviews</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      {{ doctorDetails.name }} <p *ngIf="doctorDetails.isSuperStar"><em> SuperStar!!</em></p>
+    </td>
+    <td>{{ doctorDetails.medicalSchoolAttended }}</td>
+    <td>{{ doctorDetails.spokenLanguage }}</td>
+    <td>
+      {{ doctorDetails.patientReviews }}
+    </td>
+  </tr>
+  </tbody>
+</table>
